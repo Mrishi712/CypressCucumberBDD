@@ -5,7 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+
+    "cy-chrome-headless":"cypress run --env TAGS=@Login --browser chrome",
+    "cy-chrome-headed":"cypress run --env TAGS=@Login --browser chrome --headed",
+    "cy-edge-headless":"cypress run --env TAGS=@Login --browser edge",
+    "cy-edge-headed":"cypress run --env TAGS=@Login --browser edge --headed",
+    "co-chrome-headless":"cypress run --env TAGS=@Regression --browser chrome",
+    "co-chrome-headed":"cypress run --env TAGS=@Regression --browser chrome --headed",
+    "co-edge-headless":"cypress run --env TAGS=@Regression --browser edge",
+    "co-edge-headed":"cypress run --env TAGS=@Regression --browser edge --headed",
+
+    "base-command": "cypress run --headed --browser chrome"
   },
   "author": "Rishi M",
   "license": "ISC",
