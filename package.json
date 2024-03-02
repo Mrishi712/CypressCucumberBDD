@@ -6,26 +6,47 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:open": "cypress open",
-
-    "cy-chrome-headless":"cypress run --env TAGS=@Login --browser chrome",
-    "cy-chrome-headed":"cypress run --env TAGS=@Login --browser chrome --headed",
-    "cy-edge-headless":"cypress run --env TAGS=@Login --browser edge",
-    "cy-edge-headed":"cypress run --env TAGS=@Login --browser edge --headed",
-    "co-chrome-headless":"cypress run --env TAGS=@Regression --browser chrome",
-    "co-chrome-headed":"cypress run --env TAGS=@Regression --browser chrome --headed",
-    "co-edge-headless":"cypress run --env TAGS=@Regression --browser edge",
-    "co-edge-headed":"cypress run --env TAGS=@Regression --browser edge --headed",
-
+    "Login-chrome-headless": "cypress run --env TAGS=@Login --browser chrome",
+    "Login-chrome-headed": "cypress run --env TAGS=@Login --browser chrome --headed",
+    "Login-edge-headless": "cypress run --env TAGS=@Login --browser edge",
+    "Login-edge-headed": "cypress run --env TAGS=@Login --browser edge --headed",
+    "Regression-chrome-headless": "cypress run --env TAGS=@Regression --browser chrome",
+    "Regression-chrome-headed": "cypress run --env TAGS=@Regression --browser chrome --headed",
+    "Regression-edge-headless": "cypress run --env TAGS=@Regression --browser edge",
+    "Regression-edge-headed": "cypress run --env TAGS=@Regression --browser edge --headed",
+    "Menus-chrome-headless": "cypress run --env TAGS=@Menus --browser chrome",
+    "Menus-chrome-headed": "cypress run --env TAGS=@Menus --browser chrome --headed allure=true",
+    "Menus-edge-headless": "cypress run --env TAGS=@Menus --browser edge",
+    "Menus-edge-headed": "cypress run --env TAGS=@Menus --browser edge --headed",
+    "report:allure": "allure generate allure-results --clean -o allure-report && allure open  allure-report",
     "base-command": "cypress run --headed --browser chrome"
   },
   "author": "Rishi M",
   "license": "ISC",
   "devDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
-    "cypress": "^12.14.0",
+    "@shelex/cypress-allure-plugin": "^2.40.1",
+    "allure-commandline": "^2.27.0",
+    "allure-cucumberjs": "^2.13.0",
+    "cypress": "^13.6.6",
+    "cypress-esbuild-preprocessor": "^1.0.2",
+    "esbuild": "^0.20.1",
+    "mocha-allure-reporter": "^1.4.0",
     "ts-loader": "^9.5.1"
   },
   "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^20.0.1"
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.1",
+    "cucumber-html-report": "^0.6.5"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/support/step_definitions/**/*.js",
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-html/cucumber-report.html"
+    },
+    "messages": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-ndjon/cucumber-report.ndjson"
+    }
   }
 }

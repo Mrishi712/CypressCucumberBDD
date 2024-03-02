@@ -1,7 +1,11 @@
 {
-    "compilerOptions": {
+  "compilerOptions": {
+      "allowJs": true,
+      "baseUrl": "./",
+      "types": ["@shelex/cypress-allure-plugin"],
+      "noEmit": true,
       "paths": {
         "@badeball/cypress-cucumber-preprocessor/*": ["./node_modules/@badeball/cypress-cucumber-preprocessor/dist/subpath-entrypoints/*"]
       }
-    }
   }
+}
