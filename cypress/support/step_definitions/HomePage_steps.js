@@ -3,7 +3,6 @@ import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor"
 const url = 'https://magento.softwaretestingboard.com'
 
 Given('Magneto Website is loaded', () => {
-    cy.log(Cypress.env('TAGS'))
     cy.visit(url)
 })
 
